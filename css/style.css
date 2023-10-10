@@ -7,13 +7,17 @@
 /* *********************************** */
 
 /* Tipografía */
-@font-face {
-  font-family: "";
-  src: url("") format("woff2"), url("") format("woff");
+html{
+font-family: 'Inika', sans-serif;
 }
 
 /* ******************************** */
 
-/* Colores */
+/* Variables*/
+:root{
+  --letracolornaranja:#AD5A2E;
+  --letracolormarrón: #3F1B0D;
+  --letrapequeña:16px;
+  --letragrande:32px;
+}
 
-/* ******************************** */
