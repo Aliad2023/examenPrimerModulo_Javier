@@ -20,18 +20,16 @@ font-family: 'Inika', sans-serif;
   --letrapequeña:16px;
   --letragrande:32px;
 }
-.inicial{
-  display: flex;
-}
+
 .inicial__foto{
     display: block;
-    height:100vh ;
+    height:338px;
     background-size: cover;
     background-repeat: no-repeat;
     /* Retina Display */
     /* Móvil */
     @media only screen and (min-width: 320px) and (max-width: 500px) and (orientation: portrait) {
-      width: 430px;
+      
       height: 338px;
       @media (-webkit-min-device-pixel-ratio: 1){
           background-image: url(../img/smartphone/Rectangle1S.webp);
@@ -49,7 +47,6 @@ font-family: 'Inika', sans-serif;
     /* Escritorio */
       @media only screen and (min-width: 501px) {
       border-radius: 0px 0px 0px 300px;
-      width: 1596px;
       height: 600px;
       /* Altura común para ambos casos */
       background-image: url(../img/desktop/Rectangle2D.webp);
@@ -59,43 +56,58 @@ font-family: 'Inika', sans-serif;
   }
 }
 .inicial__texto{
+  color:var(--letracolornaranja);
+  font-size: var(--letrapequeña);
   @media only screen and (min-width: 320px) and (max-width: 500px) and (orientation: portrait){
-    color:var(--letracolornaranja);
-    font-size: var(--letrapequeña);
     padding: 63px 17px 58px 23px;
   }
 }
 
 .final__texto{
-  @media only screen and (min-width: 320px) and (max-width: 500px) and (orientation: portrait){
   color: var(--letracolormarrón);
   font-size: var(--letragrande);
+  @media only screen and (min-width: 320px) and (max-width: 500px) and (orientation: portrait){
   padding: 63px 17px 58px 23px;  
-
   }
 }
 
-hr{
-  @media only screen and (min-width: 320px) and (max-width: 500px) and (orientation: portrait){
+.linea{
+    margin:0;
     background-color: var(--letracolornaranja);
+    margin-left: 5%;
+    margin-right: 5%;
     height: 6px;
-    width: 387px;
-    padding: 62px 17px 0 23px;
-  }
+    @media only screen and (min-width: 501px){
+      display: none;
+    }
+  
 }
 
 main{
+  margin:0;
   @media only screen and (min-width: 501px){
     Display:grid;
-    grid-template-columns:162px auto auto 162px;
-    grid-template-columns: repeat(2,auto);
+    row-gap: 46px;
+    column-gap: 20px;
+    padding:0 162px 0 160;
+    grid-template-columns:162px 0.48fr 1fr 162px;
+    grid-template-rows: 1fr 1fr;
   }
+
   & .inicial__foto{
-    grid-column:2/4;
+    width: 100%;
+    grid-column:2/4 ;
     grid-row: 1/2;
   }
+
+  & .inicial__texto{
+    grid-column:2/3;
+    grid-row: 2/3;
+  }
+  
+  & .final__texto{
+    grid-column:3/4;
+    grid-row: 2/3;
+  }
 }
-
-
-
 
